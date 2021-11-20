@@ -23,14 +23,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 // Database Connection
+// require("./src/app/config/dbConnection");
 require("./src/app/config/dbConnection");
 
 // App Routes
 const appRoutes = require("./src/routes/index");
 app.use("/api", appRoutes);
-// app.get("/", (req, res) => {
-//   return res.json({msg: "hello there"})
-// })
+
 
 // Port Settings
 const PORT = process.env.PORT || 5000;

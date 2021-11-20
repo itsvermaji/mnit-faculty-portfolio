@@ -1,12 +1,29 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.status(200).json({ msg: "hello there" });
-});
+const facultyAuth = require("../app/http/controllers/facultyAuth");
+const facultyService = require("../app/http/controllers/faculty");
+const verifyFaculty = require("../app/http/middlewares/verifyFaculty");
 
-router.post('/', (req, res) => {
-  res.status(200).json({msg: "this is a post request"})
-})
 
-module.exports =  router;
+// index page
+router.get("/", require("../app/http/controllers/faculty")().allFaculties);
+
+// Faculty Auth
+// registration
+router.post("/faculty/register", facultyAuth().register);
+
+// login
+router.post("/faculty/login", facultyAuth().login);
+
+// faculty operations
+// get faculty by id
+router.get("/faculty/:facultyId", verifyFaculty, facultyService().getFacultyById);
+
+// update faculty 
+router.put("/faculty/:facultyId/update", verifyFaculty, facultyService().update);
+
+// delete faculty
+router.delete("/faculty/:facultyId/delete", verifyFaculty, facultyService().delete);
+
+module.exports = router;

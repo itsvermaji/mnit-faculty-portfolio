@@ -1,26 +1,40 @@
+// const mysql = require("mysql2");
 const mysql = require("mysql2");
 
-const db = mysql.createConnection({
+const connObject = {
   database: process.env.DATABASE_NAME,
   host: process.env.DATABASE_HOST,
   user: process.env.DATABASE_USER,
   password: process.env.DATABASE_PASSWORD,
+  rowsAsArray: true,
+};
+
+const pool = mysql.createPool({
+  database: process.env.DATABASE_NAME,
+  host: process.env.DATABASE_HOST,
+  user: process.env.DATABASE_USER,
+  password: process.env.DATABASE_PASSWORD,
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0,
 });
 
-try {
-  db.connect((err) => {
-    if (err) {
-      console.error("error connecting: " + err.stack);
-      return;
-    }
+// let pool;
 
-    console.log("Database connection successfull!");
-  });
-} catch (error) {
-  console.log(error);
-  return res
-    .status(200)
-    .json({ flag: 2, msg: "Catch: An error occured, please try again!" });
-}
+pool.getConnection((err, conn) => {
+  if (err) {
+    console.log("error occured");
+  } else {
+    conn.query("show tables", (err, results, fields) => {
+      if (err) {
+        console.log(err);
+      }
 
-module.exports = db;
+      if (results.length > 0) {
+        console.log("Database connected!");
+      }
+    });
+  }
+});
+
+module.exports = pool;
