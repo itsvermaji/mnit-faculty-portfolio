@@ -24,6 +24,6 @@ router.get("/faculty/:facultyId", verifyFaculty, facultyService().getFacultyById
 router.put("/faculty/:facultyId/update", verifyFaculty, facultyService().update);
 
 // delete faculty
-router.delete("/faculty/:facultyId/delete", verifyFaculty, facultyService().delete);
+router.delete("/faculty/delete", verifyFaculty, facultyService().delete);
 
 module.exports = router;

@@ -84,45 +84,24 @@ module.exports = (req, res) => {
           email
         );
 
+        // if email not found or incorrect password
         if (rows.length < 1 && rows[0].hashed_password != md5(password)) {
           return res
             .status(400)
             .json({ flag: 2, msg: "Invalid Email or Password" });
         }
 
-        // db.query(
-        //   "SELECT * FROM user_detail WHERE user_email = ?",
-        //   [user_email],
-        //   (err, rows) => {
-        //     if (err) {
-        //       console.log(err);
-        //       return res.status(200).json({ flag: 2, msg: "An error occured!" });
-        //     }
+        // After Successful Login, Now Generate a Token
+        const token = jwt.sign(
+          { id: rows[0].id, role: "faculty" },
+          process.env.JWT_SECRET,
+          {
+            expiresIn: process.env.JWT_EXPIRES_IN,
+          }
+        );
+        console.log("Login Token Generated");
 
-        //     if (rows.length == 0 || md5(password) != rows[0].user_hash) {
-        //       console.log("Invalid Email or Password!");
-        //       return res
-        //         .status(200)
-        //         .json({ flag: 2, msg: "Invalid Email or Password" });
-        //     }
-
-        //     // After Successful Login, Now Generate a Token
-
-        //     const token = jwt.sign(
-        //       { id: rows[0].user_id, role: "user" },
-        //       process.env.JWT_SECRET,
-        //       {
-        //         expiresIn: process.env.JWT_EXPIRES_IN,
-        //       }
-        //     );
-
-        //     console.log("Login Token Generated");
-        // res.cookie("jwt", token, {
-        //   maxAge: 1000 * 60 * 60,
-        //   httpOnly: true,
-        // });
-        // }
-        return res.status(200).json({ flag: 1, msg: "successful", rows });
+        return res.status(200).json({ flag: 1, msg: "successful", token });
       } catch (err) {
         console.log(err);
         return res
@@ -130,5 +109,6 @@ module.exports = (req, res) => {
           .json({ flag: 2, msg: "An error occured while logging in!" });
       }
     },
+
   };
 };

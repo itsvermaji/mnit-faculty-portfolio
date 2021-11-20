@@ -1,15 +1,15 @@
 const express = require("express");
 const path = require("path");
-const cookieParser = require("cookie-parser");
+// const cookieParser = require("cookie-parser");
 
 // Express Application
 const app = express();
 
 // Cookie Parser
-app.use(cookieParser());
+// app.use(cookieParser());
 
 // CORS;
-app.use(require("cors")());
+// app.use(require("cors")());
 
 // Dotenv
 require("dotenv").config();
