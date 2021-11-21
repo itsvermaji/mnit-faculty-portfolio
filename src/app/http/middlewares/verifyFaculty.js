@@ -9,6 +9,7 @@ module.exports = (req, res, next) => {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     req.user = decoded;
     console.log(req.user);
+    if(req.user) console.log('user verified');
 
   } catch (err) {
     console.log(err);

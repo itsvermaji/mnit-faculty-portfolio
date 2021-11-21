@@ -1,0 +1,75 @@
+[
+    {
+        "name": "Dr. Dinesh Gopalani",
+        "email": "dgopalani.cse@mnit.ac.in",
+        "password": "hello123",
+        "gauthor_id":"O4y8ddYAAAAJ",
+        "designation": "Associate Professor",
+        "contact_detail": "Dept. of Computer Science & Engineering,MNIT, Jaipur-302017",
+        "qualification": "Ph.D.(CSE) from MNIT Jaipur:M.Tech.(CSE) from IIT Bombay B.E.(CSE) from MBM Engineering College, JNV University, Jodhpur:Dept. of Computer Science & Engineering,MNIT, Jaipur-302017",
+        "phone": "0141-2713430",
+        "profile_img":"http://www.mnit.ac.in/PortalProfile/images/faculty/mnitjas130.png"
+    },
+
+    {
+        "name": "Dr. Girdhari Singh",
+        "email": "gsingh.cse@mnit.ac.in",
+        "password": "hello123",
+        "gauthor_id":"_oGLY-IAAAAJ",
+        "designation": "Professor",
+        "contact_detail": "Dept. of Computer Science & Engineering,MNIT, Jaipur-302017",
+        "qualification": "Ph.D.(CSE) from MNIT Jaipur:M.Tech.(CSE) from IIT Bombay B.E.(CSE) from MBM Engineering College, JNV University, Jodhpur:Dept. of Computer Science & Engineering,MNIT, Jaipur-302017",
+        "phone": "0141-2713430",
+        "profile_img":"http://www.mnit.ac.in/PortalProfile/images/faculty/mnitjas088.png"
+
+    },
+    {
+        "name": "Dr. Girdhari Singh",
+        "email": "gsingh@2mnit.com",
+        "password": "hello123",
+        "gauthor_id":"_oGLY-IAAAAJ",
+        "designation": "Professor",
+        "contact_detail": "Dept. of Computer Science & Engineering,MNIT, Jaipur-302017",
+        "qualification": "Ph.D.(CSE) from MNIT Jaipur:M.Tech.(CSE) from IIT Bombay B.E.(CSE) from MBM Engineering College, JNV University, Jodhpur:Dept. of Computer Science & Engineering,MNIT, Jaipur-302017",
+        "phone": "0141-2713430",
+        "profile_img":"http://www.mnit.ac.in/PortalProfile/images/faculty/mnitjas088.png"
+
+    },
+    {
+        "name": "Dr. Girdhari Singh",
+        "email": "gsingh@3mnit.com",
+        "password": "hello123",
+        "gauthor_id":"_oGLY-IAAAAJ",
+        "designation": "Professor",
+        "contact_detail": "Dept. of Computer Science & Engineering,MNIT, Jaipur-302017",
+        "qualification": "Ph.D.(CSE) from MNIT Jaipur:M.Tech.(CSE) from IIT Bombay B.E.(CSE) from MBM Engineering College, JNV University, Jodhpur:Dept. of Computer Science & Engineering,MNIT, Jaipur-302017",
+        "phone": "0141-2713430",
+        "profile_img":"http://www.mnit.ac.in/PortalProfile/images/faculty/mnitjas088.png"
+
+    },
+    {
+        "name": "Dr. Girdhari Singh",
+        "email": "gsingh@4mnit.com",
+        "password": "hello123",
+        "gauthor_id":"_oGLY-IAAAAJ",
+        "designation": "Professor",
+        "contact_detail": "Dept. of Computer Science & Engineering,MNIT, Jaipur-302017",
+        "qualification": "Ph.D.(CSE) from MNIT Jaipur:M.Tech.(CSE) from IIT Bombay B.E.(CSE) from MBM Engineering College, JNV University, Jodhpur:Dept. of Computer Science & Engineering,MNIT, Jaipur-302017",
+        "phone": "0141-2713430",
+        "profile_img":"http://www.mnit.ac.in/PortalProfile/images/faculty/mnitjas088.png"
+
+    },
+    {
+        "name": "Dr. Girdhari Singh",
+        "email": "gsingh@5mnit.com",
+        "password": "hello123",
+        "gauthor_id":"_oGLY-IAAAAJ",
+        "designation": "Professor",
+        "contact_detail": "Dept. of Computer Science & Engineering,MNIT, Jaipur-302017",
+        "qualification": "Ph.D.(CSE) from MNIT Jaipur:M.Tech.(CSE) from IIT Bombay B.E.(CSE) from MBM Engineering College, JNV University, Jodhpur:Dept. of Computer Science & Engineering,MNIT, Jaipur-302017",
+        "phone": "0141-2713430",
+        "profile_img":"http://www.mnit.ac.in/PortalProfile/images/faculty/mnitjas088.png"
+
+    }
+
+]

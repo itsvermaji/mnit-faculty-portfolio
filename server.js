@@ -30,6 +30,9 @@ require("./src/app/config/dbConnection");
 const appRoutes = require("./src/routes/index");
 app.use("/api", appRoutes);
 
+if(process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'))
+}
 
 // Port Settings
 const PORT = process.env.PORT || 5000;

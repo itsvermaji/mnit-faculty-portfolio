@@ -3,7 +3,6 @@ const jwt = require("jsonwebtoken");
 const md5 = require("md5");
 const pool = require("../../config/dbConnection");
 const fetchAuthorData = require("../../helpers/fetchAuthorData");
-const { listenerCount } = require("../../config/dbConnection");
 
 module.exports = (req, res) => {
   return {
@@ -19,7 +18,7 @@ module.exports = (req, res) => {
         console.log("User is displayed ordinary information");
 
         let [rows] = await promisedPool.query(
-          "select id, email, designation, contact_detail from faculties where id = ?",
+          "select id, name, email, designation, contact_detail from faculties where id = ?",
           [facultyId]
         );
 
@@ -48,7 +47,7 @@ module.exports = (req, res) => {
       try {
         const promisePool = pool.promise();
 
-        let [rows, fields] = await promisePool.query("SELECT id, email, designation, profile_img, phone FROM faculties");
+        let [rows, fields] = await promisePool.query("SELECT id, name, email, designation, profile_img, phone FROM faculties");
 
         return res.status(200).json({ faculties: rows });
       } catch (error) {

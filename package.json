@@ -4,7 +4,11 @@
   "description": "This is the backend logic of E-Kart module.",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "build": "cd client && npm run build",
+    "install-client": "cd client && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "Deepak Verma",
@@ -15,7 +19,8 @@
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "md5": "^2.3.0",
-    "mysql2": "^2.2.5"
+    "mysql2": "^2.2.5",
+    "react-bootstrap": "^2.0.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"

@@ -16,6 +16,7 @@ module.exports = (req, res) => {
     // register function
     async register(req, res) {
       const {
+        name,
         email,
         password,
         gauthor_id,
@@ -23,6 +24,7 @@ module.exports = (req, res) => {
         qualification,
         contact_detail,
         phone,
+        profile_img
       } = req.body;
 
       try {
@@ -39,6 +41,9 @@ module.exports = (req, res) => {
         }
 
         const faculty = {
+
+          name,
+          profile_img,
           email,
           hashed_password: md5(password),
           gauthor_id,
@@ -85,7 +90,7 @@ module.exports = (req, res) => {
         );
 
         // if email not found or incorrect password
-        if (rows.length < 1 && rows[0].hashed_password != md5(password)) {
+        if (rows.length < 1 || rows[0].hashed_password != md5(password)) {
           return res
             .status(400)
             .json({ flag: 2, msg: "Invalid Email or Password" });
@@ -101,7 +106,15 @@ module.exports = (req, res) => {
         );
         console.log("Login Token Generated");
 
-        return res.status(200).json({ flag: 1, msg: "successful", token });
+        [rows] = await promisePool.query(
+          "SELECT * FROM faculties where email = ?",
+          email
+        );
+
+        console.log(`User ${rows[0].id} logged in!`);
+
+
+        return res.status(200).json({ flag: 1, msg: "successful", tkn:token, data: rows[0].id});
       } catch (err) {
         console.log(err);
         return res

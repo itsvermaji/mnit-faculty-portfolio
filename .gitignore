@@ -5,14 +5,14 @@
 client/node_modules
 client/package-lock.json
 
-server/package-lock.json
-server/node_modules
+package-lock.json
+node_modules
 
 /.pnp
 .pnp.js
 
 #Config File
-server/.env
+.env
 
 # testing
 /coverage
