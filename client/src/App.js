@@ -4,7 +4,7 @@ import LoginForm from './Components/Login/LoginForm';
 function App() {
   return (
     <div>
-      <LoginForm />
+      <LoginForm email="balkrishan@123" password="password"/>
     </div>
   );
 }

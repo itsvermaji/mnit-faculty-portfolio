@@ -6,22 +6,27 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* background-color: black; */
+  background: #abbaab;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #ffffff, #abbaab);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #ffffff, #abbaab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  /* background-color: #8BC6EC; */
+  /* background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%); */
+  /* background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%, #dfdad9, #757474); */
+  
+
 }
 
-.float-container {
-  border: 3px solid #;
-  padding: 20px;
-  align-self: center;
-  margin: left 100px;
+.container {
+  margin-top: 100px;
 }
-
-.float-child {
-  margin: left 100px;
-  align-items: center;
-  width: 30%;
-  float: left;
-  padding: 20px;
-}  
+.imgCard {
+  padding-top: 30px;
+}
+#loginPlaceHolder {
+  padding-top: 55px;
+  
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

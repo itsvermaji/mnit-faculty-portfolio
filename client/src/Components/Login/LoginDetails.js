@@ -1,15 +1,18 @@
-import React from 'react'
+import React, {useState} from 'react'
 
-const LoginDetails = () => {
+const LoginDetails = (props) => {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
     return (
             <form>
                 <div class="form-outline mb-4">
-                    <input type="email" id="form2Example1" class="form-control" />
-                    <label class="form-label" for="form2Example1">Email address</label>
+                    <input type="email" value={email} id="faculty-email" class="form-control" />
+                    <label class="form-label" for="faculty-email">Email address</label>
+                    
                 </div>
                 <div class="form-outline mb-4">
-                    <input type="password" id="form2Example2" class="form-control" />
-                    <label class="form-label" for="form2Example2">Password</label>
+                    <input type="password" value={password} id="faculty-password" class="form-control" />
+                    <label class="form-label" for="faculty-password">Password</label>
                 </div>
                 <div class="row mb-4">
                     <div class="col">
@@ -19,11 +22,6 @@ const LoginDetails = () => {
 
             <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
 
-            <div class="text-center">
-                <p>Not a member? <a href="#!">Register</a></p>
-                
-
-            </div>
             </form>
 
     )
