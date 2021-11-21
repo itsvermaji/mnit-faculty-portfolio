@@ -15,8 +15,17 @@
 
 The about of project.
 
-The purpose of this module is that institutes/coachings can publish their products/courses on this platform and students can make purchases of the courses offered by their respective institute. Students will be able to access the products after payments.
-This module is a part of a larger application and later on it will be integrated.
+### Working
+
+<p align="center">
+    <img style="display: flex; margin-top:30px;" src="https://raw.githubusercontent.com/itsvermaji/mnit-faculty-portfolio/master/server/src/public/flow_chart.jpeg" alt="Flow-Chart" width="800" >
+    <h3 align="center">Request Response Cycle</h3>
+
+<p  style="margin-top: 30px;">
+   Here working will come
+</p>
+   
+</p>
 
 ### Built With
 
