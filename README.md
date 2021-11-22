@@ -19,7 +19,7 @@ The about of project.
 
 <p align="center">
     <img style="display: flex; margin-top:30px;" src="https://raw.githubusercontent.com/itsvermaji/mnit-faculty-portfolio/master/server/src/public/flow_chart.jpeg" alt="Flow-Chart" width="800" >
-    <h3 align="center">Request Response Cycle</h3>
+    <h4 align="center">Request Response Cycle</h4>
 
 <p  style="margin-top: 30px;">
    Here working will come
