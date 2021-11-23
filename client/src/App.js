@@ -1,12 +1,17 @@
 import './App.css';
+import MainPage from './Components/HomePage/MainPage';
 import LoginForm from './Components/Login/LoginForm';
-import Main_page from './Components/HomePage/Main_page';
+import Registration from './Components/Registration/RegForm';
 
 function App() {
   return (
     <div>
-      <Main_page/>
-      <LoginForm email="balkrishan@123" password="password"/>
+      {/* <LoginForm email="balkrishan@123" password="password"/> */}
+
+      {/* <Registration/>
+        <hr style={{backgroundColor: "black",height: 2}}/>
+    <LoginForm/> */}
+    <MainPage/>
     </div>
   );
 }
