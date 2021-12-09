@@ -1,12 +1,19 @@
-import './App.css';
-import LoginForm from './Components/Login/LoginForm';
-import Main_page from './Components/HomePage/Main_page';
+import Navigation from "./Components/layouts/Navigation";
+import HomePage from "./Pages/Home";
+import { Routes, Route } from "react-router-dom";
+import FacultyProfile from "./Pages/FacultyProfile";
+import PageNotFound from "./Pages/PageNotFound";
 
 function App() {
   return (
     <div>
-      <Main_page/>
-      <LoginForm email="balkrishan@123" password="password"/>
+      <Navigation />
+
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="users/" element={<FacultyProfile />} />
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
     </div>
   );
 }
