@@ -1,11 +1,133 @@
-import React from 'react'
+import React, { useState, useRef } from "react";
+import { Container, Row, Col, Image } from "react-bootstrap";
+import { TextField, Box, Button, Input } from "@mui/material";
 
-const RegistrationForm = () => {
+const RegistrationForm = (props) => {
+  function submitHandler(event) {
+    event.preventDefault();
+
+    const formData = event.currentTarget.elements;
+
+    const name = formData.name.value;
+    const email = formData.email.value;
+    const password = formData.name.value;
+    const password2 = formData.password2.value;
+    const designation = formData.designation.value;
+    const phone = formData.phone.value;
+    const qualification = formData.qualification.value;
+    const gauthor_id = formData.gauthor_id.value;
+    const contact_detail = formData.contact_detail.value;
+    const profile_img = formData.profile_img.value;
+
+    const facultyData = {
+      name: name,
+      email: email,
+      profile_img:profile_img,
+      password: password,
+      designation: designation,
+      phone: phone,
+      qualification: qualification,
+      gauthor_id: gauthor_id,
+      contact_detail: contact_detail,
+    };
+
+    // console.log(facultyData);
+
+    props.onRegistration(facultyData);
+    alert("Registration Successfull");
+  }
+
   return (
-    <div>
-      This is registration form
-    </div>
-  )
-}
+    <Container className="container" style={{ height: "1000px" }}>
+      <Row className="justify-content-md-center">
+        <form onSubmit={submitHandler}>
+          <div>
+            <TextField
+              id="name"
+              name="name"
+              size="small"
+              label="Name"
+              variant="outlined"
+            />
+            <TextField
+              id="email"
+              name="email"
+              size="small"
+              label="Email"
+              type="email"
+              variant="outlined"
+            />
+          </div>
 
-export default RegistrationForm
+          <div>
+            <TextField
+              id="password"
+              name="password"
+              size="small"
+              label="Password"
+              type="password"
+              variant="outlined"
+            />
+            <TextField
+              id="password2"
+              name="password2"
+              size="small"
+              type="password"
+              label="Confirm Password"
+              variant="outlined"
+            />
+          </div>
+
+          <div>
+            <TextField
+              id="designation"
+              name="designation"
+              label=" designation"
+              variant="outlined"
+            />
+            <TextField
+              id="phone"
+              name="phone"
+              label=" Phone"
+              variant="outlined"
+            />
+          </div>
+          <TextField
+            id="qualification"
+            name="qualification"
+            label=" Qualification"
+            variant="outlined"
+          />
+          <TextField
+            id="gauthor_id"
+            name="gauthor_id"
+            label=" Google Author Id"
+            variant="outlined"
+          />
+
+          <TextField
+            id="contact_detail"
+            name="contact_detail"
+            label=" Contact Details"
+            variant="outlined"
+          />
+          <TextField
+            id="profile_img"
+            name="profile_img"
+            label=" Profile Image"
+            variant="outlined"
+          />
+
+          <div>
+            {/* <Input type = "submit" value = "Submit" /> */}
+            <Button variant="contained" type="submit">
+              Submit
+            </Button>
+          </div>
+        </form>
+      </Row>
+    </Container>
+  );
+};
+
+export default RegistrationForm;

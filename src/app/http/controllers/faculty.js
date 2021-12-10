@@ -49,7 +49,7 @@ module.exports = (req, res) => {
 
         let [rows, fields] = await promisePool.query("SELECT id, name, email, designation, profile_img, phone FROM faculties");
 
-        return res.status(200).json({ faculties: rows });
+        return res.status(200).json({ flag: 1, faculties: rows });
       } catch (error) {
         console.log(error);
         return res.status(400).json({ msg: "an error occured!" });

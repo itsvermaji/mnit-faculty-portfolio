@@ -41,7 +41,6 @@ module.exports = (req, res) => {
         }
 
         const faculty = {
-
           name,
           profile_img,
           email,

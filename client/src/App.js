@@ -1,6 +1,9 @@
 import Navigation from "./Components/layouts/Navigation";
-import HomePage from "./Pages/Home";
 import { Routes, Route } from "react-router-dom";
+// pages
+import HomePage from "./Pages/Home";
+import RegistrationPage from './Pages/Registration'
+import LoginPage from './Pages/Login'
 import FacultyProfile from "./Pages/FacultyProfile";
 import PageNotFound from "./Pages/PageNotFound";
 
@@ -11,7 +14,9 @@ function App() {
 
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="users/" element={<FacultyProfile />} />
+        <Route path="/register" element={<RegistrationPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/users" element={<FacultyProfile />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </div>
