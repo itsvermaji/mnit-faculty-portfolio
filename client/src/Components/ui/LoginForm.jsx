@@ -1,24 +1,18 @@
-import React from 'react'
-import {ImgCard} from "../Login/ImgCard";
-import {LoginDetails} from "../Login/LoginDetails"
-import {Container, Row, Col} from 'react-bootstrap'
+import React from "react";
+import LoginDetails from "../Login/LoginDetails";
+import { Container, Row, Col } from "react-bootstrap";
 const LoginForm = (props) => {
-    let imgLink="https://image.shutterstock.com/z/stock-vector-male-avatar-profile-picture-vector-149083895.jpg";
-    // let imgLink = props.faculty.img;
-    return (
-        <>
-        <Container className="container" >
-            <Row className="justify-content-md-center">        
-                <Col xs lg="4">
-                    <ImgCard imgSrc={imgLink}/>
-                </Col>
-                <Col xs lg="4" id="loginPlaceHolder">
-                    <LoginDetails email={props.email} password={props.password} />
-                </Col>
-            </Row>
-        </Container>
-        </>
-    )
-}
+  return (
+    <>
+      <Container className="container">
+        <Row className="justify-content-md-center">
+          <Col xs lg="4" id="loginPlaceHolder">
+            <LoginDetails email={props.email} password={props.password} />
+          </Col>
+        </Row>
+      </Container>
+    </>
+  );
+};
 
-export default LoginForm
+export default LoginForm;
