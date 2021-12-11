@@ -10,7 +10,7 @@ const LoginForm = (props) => {
         <Container className="container" >
             <Row className="justify-content-md-center">        
                 <Col xs lg="4">
-                    <ImgCard imgSrc={imgLink}/>
+                    <ImgCard faculty={props.faculty}/>
                 </Col>
                 <Col xs lg="4" id="loginPlaceHolder">
                     <LoginDetails email={props.email} password={props.password} />

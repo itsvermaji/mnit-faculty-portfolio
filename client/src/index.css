@@ -5,6 +5,12 @@
   margin: 0;
 }
 
+.center {
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+}
 
 .container {
   margin-top: 100px;

@@ -9,9 +9,12 @@ const ImgCard = (props) => {
                     
                     <Card.Body>
                         <Card.Img variant="top" src={props.imgSrc} />
+                        {/* <Card.Text> {props.faculty.name} </Card.Text>
+                        <Card.Text>{props.faculty.designation}</Card.Text>
+                        <Card.Text>{props.faculty.contact_detail}</Card.Text> */}
                         <Card.Text> Balkrishan Sehra </Card.Text>
                         <Card.Text>Student at MNIT</Card.Text>
-                        <Card.Text>Working on this project</Card.Text>
+                        <Card.Text>Aurobindo Hostel, MNIT</Card.Text>
                     </Card.Body>
                 </Card>
             </div> 
