@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Loading from "../Components/ui/Loading";
-import Card from '../Components/ui/Card'
 import FacultyList from "../Components/ui/FacultyList";
 
 const HomePage = () => {
@@ -17,10 +16,8 @@ const HomePage = () => {
         throw response;
       })
       .then((data) => {
-        const {faculties, flag} = data;
-        // console.log(faculties, flag);
+        const {faculties} = data;
         setFacultyData(faculties);
-        // console.log(facultyData);
       })
       .catch((err) => {
         console.log("error occured while fetching data", err);

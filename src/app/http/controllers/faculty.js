@@ -18,7 +18,7 @@ module.exports = (req, res) => {
         console.log("User is displayed ordinary information");
 
         let [rows] = await promisedPool.query(
-          "select id, name, email, designation, contact_detail from faculties where id = ?",
+          "select id, name, email, designation, contact_detail, profile_img from faculties where id = ?",
           [facultyId]
         );
 

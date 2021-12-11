@@ -1,6 +1,6 @@
-import React, { useState, useRef } from "react";
-import { Container, Row, Col, Image } from "react-bootstrap";
-import { TextField, Box, Button, Input } from "@mui/material";
+import React from "react";
+import { Container, Row } from "react-bootstrap";
+import { TextField, Button } from "@mui/material";
 
 const RegistrationForm = (props) => {
   function submitHandler(event) {
@@ -119,7 +119,6 @@ const RegistrationForm = (props) => {
           />
 
           <div>
-            {/* <Input type = "submit" value = "Submit" /> */}
             <Button variant="contained" type="submit">
               Submit
             </Button>
