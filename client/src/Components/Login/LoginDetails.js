@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
 import { TextField, Button } from "@mui/material";
 import { Link } from "react-router-dom";
 
@@ -29,7 +30,7 @@ const LoginDetails = (props) => {
         props.isLogin(true);
 
         // save it into react store
-        var token = resData.token
+        var token = resData.token;
         // console.log(token);
 
         // if loggedin fetch data again
@@ -38,13 +39,12 @@ const LoginDetails = (props) => {
           method: "GET", // or 'PUT'
           headers: {
             "Content-Type": "application/json",
-            "x-access-token": token
-          }
+            "x-access-token": token,
+          },
         })
           .then((response) => response.json())
           .then((resData) => {
-            console.log('full Data', resData);
-            
+            console.log("full Data", resData);
           });
 
         props.setFaculty({ a: 1, b: 2 });
@@ -58,39 +58,51 @@ const LoginDetails = (props) => {
   }
 
   return (
-    <form onSubmit={signinHandler}>
-      <TextField
-        id="email"
-        name="email"
-        size="small"
-        label="Email"
-        type="email"
-        variant="outlined"
-      />
-      <TextField
-        id="password"
-        name="password"
-        size="small"
-        label="Password"
-        type="password"
-        variant="outlined"
-      />
+    <Container className="container">
+      <Row className="justify-content-md-center">
+        <Col xs lg="4" id="loginPlaceHolder">
+          <div style={{ margin: "10px", display: "flexbox" }}>
+            <form onSubmit={signinHandler}>
+              <div className="row mb-4">
+                <TextField
+                  id="email"
+                  name="email"
+                  size="small"
+                  label="Email"
+                  type="email"
+                  variant="outlined"
+                />
+              </div>
+              <div className="row mb-4">
+                <TextField
+                  id="password"
+                  name="password"
+                  size="small"
+                  label="Password"
+                  type="password"
+                  variant="outlined"
+                />
+              </div>
 
-      <div className="row mb-4">
-        <div className="col">
-          <Link to="/register">Register</Link>
-        </div>
-        <div className="col">
-          <Link to="/forgot">Forgot password?</Link>
-        </div>
-      </div>
+              <div className="row mb-4">
+                <div className="col">
+                  <Link to="/register">Register</Link>
+                </div>
+                <div className="col">
+                  <Link to="/forgot">Forgot password?</Link>
+                </div>
+              </div>
 
-      <div>
-        <Button variant="contained" type="submit">
-          Sign In
-        </Button>
-      </div>
-    </form>
+              <div>
+                <Button variant="contained" type="submit">
+                  Sign In
+                </Button>
+              </div>
+            </form>
+          </div>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "../Components/Profile/profile.css";
-import LoginForm from "../Components/ui/LoginForm";
 
 import { Container } from "react-bootstrap";
 import Grid from "@mui/material/Grid";
@@ -9,6 +8,7 @@ import Grid from "@mui/material/Grid";
 import Item from "@mui/material/ListItem";
 import FacultyTables from "../Components/ui/FacultyTables";
 import Loading from "../Components/ui/Loading";
+import LoginForm from "../Components/ui/LoginForm";
 
 const ProfilePage = () => {
   const [loading, setLoading] = useState(true);
@@ -38,7 +38,7 @@ const ProfilePage = () => {
         setLoading(false);
       });
   }, []);
-
+  // console.log(faculty.profile_img);
   if (loading) {
     return <Loading />;
   } else {
@@ -52,8 +52,10 @@ const ProfilePage = () => {
                   width: "160px",
                   height: "160px",
                   borderRadius: "80px",
+                  objectFit:"cover"
                 }}
                 src={faculty.profile_img}
+                
               />
             </Item>
           </Grid>
@@ -75,7 +77,6 @@ const ProfilePage = () => {
         <hr />
 
         {isLogin ? <FacultyTables /> : <LoginForm isLogin = {setIsLogin} faculty = {setFaculty}/>}
-
         
       </Container>
     );
