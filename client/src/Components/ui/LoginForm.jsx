@@ -7,7 +7,7 @@ const LoginForm = (props) => {
       <Container className="container">
         <Row className="justify-content-md-center">
           <Col xs lg="4" id="loginPlaceHolder">
-            <LoginDetails email={props.email} password={props.password} />
+            <LoginDetails email={props.email} password={props.password} isLogin = {props.isLogin} setFaculty = {props.faculty}/>
           </Col>
         </Row>
       </Container>

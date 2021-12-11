@@ -22,7 +22,7 @@ module.exports = (req, res) => {
           [facultyId]
         );
 
-        return res.status(200).json({ flag: 1, msg: "success", data: rows });
+        return res.status(200).json({ flag: 3, msg: "success", data: rows });
       } else {
         console.log("User is displayed full information");
         let [rows] = await promisedPool.query(

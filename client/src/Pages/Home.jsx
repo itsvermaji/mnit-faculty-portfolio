@@ -12,7 +12,7 @@ const HomePage = () => {
       .then((response) => {
         if (response.ok) return response.json();
 
-        console.log(response);
+        // console.log(response);
         throw response;
       })
       .then((data) => {

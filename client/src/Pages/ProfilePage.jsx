@@ -28,6 +28,7 @@ const ProfilePage = () => {
       .then((response) => response.json())
       .then((resData) => {
         const { flag, msg, data } = resData;
+        console.log('flag', flag);
         setFaculty(data[0]);
       })
       .catch((error) => {
@@ -73,8 +74,9 @@ const ProfilePage = () => {
 
         <hr />
 
-        {isLogin || <LoginForm />}
-        {isLogin && <FacultyTables />}
+        {isLogin ? <FacultyTables /> : <LoginForm isLogin = {setIsLogin} faculty = {setFaculty}/>}
+
+        
       </Container>
     );
   }

@@ -21,7 +21,8 @@ const card = (
 const PublicationCard = () => {
     return (
         <Box sx={{width:"100%"}}>
-            <Card raised="true" variant="outlined">{card}</Card>
+            {/* <Card raised="true" variant="outlined">{card}</Card> */}
+            This is a card.
         </Box>
     )
 }

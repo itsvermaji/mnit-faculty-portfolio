@@ -1,6 +1,7 @@
 const jwt = require("jsonwebtoken");
 const md5 = require("md5");
 const pool = require("../../config/dbConnection");
+const cookie = require("cookie");
 
 // Registration Rules:
 /*
@@ -24,7 +25,7 @@ module.exports = (req, res) => {
         qualification,
         contact_detail,
         phone,
-        profile_img
+        profile_img,
       } = req.body;
 
       try {
@@ -91,7 +92,7 @@ module.exports = (req, res) => {
         // if email not found or incorrect password
         if (rows.length < 1 || rows[0].hashed_password != md5(password)) {
           return res
-            .status(400)
+            .status(200)
             .json({ flag: 2, msg: "Invalid Email or Password" });
         }
 
@@ -103,7 +104,13 @@ module.exports = (req, res) => {
             expiresIn: process.env.JWT_EXPIRES_IN,
           }
         );
-        console.log("Login Token Generated");
+
+        // res.cookie('JWT',  token, {
+        //   // httpOnly: true,
+        //   maxAge: 60 * 60 * 24 * 3 // 1 week
+        // });
+
+        console.log("Token generated");
 
         [rows] = await promisePool.query(
           "SELECT * FROM faculties where email = ?",
@@ -112,8 +119,9 @@ module.exports = (req, res) => {
 
         console.log(`User ${rows[0].id} logged in!`);
 
-
-        return res.status(200).json({ flag: 1, msg: "successful", tkn:token, data: rows[0].id});
+        return res
+          .status(200)
+          .json({ flag: 1, msg: "successful", token, data: rows[0].id });
       } catch (err) {
         console.log(err);
         return res
@@ -121,6 +129,5 @@ module.exports = (req, res) => {
           .json({ flag: 2, msg: "An error occured while logging in!" });
       }
     },
-
   };
 };

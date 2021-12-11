@@ -1,10 +1,13 @@
 const express = require("express");
 const path = require("path");
+const cookieParser = require('cookie-parser');
+
 // Express Application
 const app = express();
 // CORS;
 app.use(require("cors")());
-
+// Cookie Parser
+app.use(cookieParser());
 // Dotenv
 require("dotenv").config();
 
@@ -15,6 +18,7 @@ app.use(express.static(publicDirectory));
 // Express Parser
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
 
 // Database Connection
 // require("./src/app/config/dbConnection");

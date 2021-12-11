@@ -13,7 +13,7 @@ export default function ProfileCard(props) {
   let navigate = useNavigate();
 
   
-  console.log(props.faculty);
+  // console.log(props.faculty);
   const { faculty } = props;
 
   function profileRedirect() {

@@ -3,20 +3,17 @@ import { TextField, Button } from "@mui/material";
 import { Link } from "react-router-dom";
 
 const LoginDetails = (props) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
   function signinHandler(event) {
     event.preventDefault();
-    
+
     const formData = event.currentTarget.elements;
-    
+
     const signinData = {
       email: formData.email.value,
       password: formData.password.value,
     };
 
-    const url = `http://localhost:5000/api/faculty/login`;
+    var url = `http://localhost:5000/api/faculty/login`;
     fetch(url, {
       method: "POST", // or 'PUT'
       headers: {
@@ -27,12 +24,36 @@ const LoginDetails = (props) => {
       .then((response) => response.json())
       .then((resData) => {
         console.log(resData);
+        console.log(resData.data);
+        console.log("Here we set the state");
+        props.isLogin(true);
+
+        // save it into react store
+        var token = resData.token
+        // console.log(token);
+
+        // if loggedin fetch data again
+        url = `http://localhost:5000/api/faculty/${resData.data}`;
+        fetch(url, {
+          method: "GET", // or 'PUT'
+          headers: {
+            "Content-Type": "application/json",
+            "x-access-token": token
+          }
+        })
+          .then((response) => response.json())
+          .then((resData) => {
+            console.log('full Data', resData);
+            
+          });
+
+        props.setFaculty({ a: 1, b: 2 });
       })
       .catch((error) => {
         console.error("an error occured while registration:", error);
       })
       .finally(() => {
-        console.log('Logged In!');
+        console.log("Logged In!");
       });
   }
 
@@ -57,10 +78,10 @@ const LoginDetails = (props) => {
 
       <div className="row mb-4">
         <div className="col">
-          <Link to = "/register" >Register</Link>
+          <Link to="/register">Register</Link>
         </div>
         <div className="col">
-          <Link to = "/forgot">Forgot password?</Link>
+          <Link to="/forgot">Forgot password?</Link>
         </div>
       </div>
 
