@@ -9,11 +9,13 @@ import Item from "@mui/material/ListItem";
 import FacultyTables from "../Components/ui/FacultyTables";
 import Loading from "../Components/ui/Loading";
 import LoginForm from "../Components/ui/LoginForm";
+import LoginDetails from "../Components/Login/LoginDetails";
 
 const ProfilePage = () => {
   const [loading, setLoading] = useState(true);
   const [isLogin, setIsLogin] = useState(false);
   const [faculty, setFaculty] = useState({});
+  const [facultyMeta, setFacultyMeta] = useState({});
 
   const { id } = useParams();
 
@@ -76,7 +78,7 @@ const ProfilePage = () => {
 
         <hr />
 
-        {isLogin ? <FacultyTables /> : <LoginForm isLogin = {setIsLogin} faculty = {setFaculty}/>}
+        {isLogin ? <FacultyTables metaData={facultyMeta}/> : <LoginDetails isLogin = {setIsLogin} setFaculty = {setFacultyMeta}/>}
         
       </Container>
     );

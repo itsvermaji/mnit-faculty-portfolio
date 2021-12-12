@@ -1,30 +1,36 @@
-import React from 'react'
+import React from "react";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 // import { makeStyles } from '@mui/material';
 
+export default function PublicationCard(props){
+
+  const {article} = props;
 
 
-const card = (
-  <React.Fragment>
-    <CardContent>
-      <Typography variant="h6" color="text.primary">Publication Title</Typography>
-      <Typography color="text.secondary" gutterBottom>Year</Typography>
-      <Typography color="text.secondary" gutterBottom>Contributors' Name</Typography>
-      <Typography color="text.secondary">Conference Name</Typography>
-    </CardContent>
-  </React.Fragment>
-);
+  return (
+    <Box sx={{ width: "100%" }}>
+      <Card raised="true" variant="outlined">
+        <React.Fragment>
+          <CardContent>
+            <Typography variant="h6" color="text.primary">
+              {article.title}
+            </Typography>
+            <Typography color="text.secondary" gutterBottom>
+              {article.year}
+            </Typography>
+            <Typography color="text.secondary" gutterBottom>
+              {article.authors}
+            </Typography>
+            <Typography color="text.secondary">{article.publication}</Typography>
+          </CardContent>
+        </React.Fragment>
+      </Card>
+      {/* This is a card. */}
+    </Box>
+  );
+};
 
-const PublicationCard = () => {
-    return (
-        <Box sx={{width:"100%"}}>
-            {/* <Card raised="true" variant="outlined">{card}</Card> */}
-            This is a card.
-        </Box>
-    )
-}
 
-export default PublicationCard

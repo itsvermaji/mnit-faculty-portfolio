@@ -45,9 +45,14 @@ const LoginDetails = (props) => {
           .then((response) => response.json())
           .then((resData) => {
             console.log("full Data", resData);
+
+            
+            // console.log('meta', resData.data);
+            props.setFaculty(resData.data[1]);
+            
           });
 
-        props.setFaculty({ a: 1, b: 2 });
+        // props.setFaculty({ a: 1, b: 2 });
       })
       .catch((error) => {
         console.error("an error occured while registration:", error);

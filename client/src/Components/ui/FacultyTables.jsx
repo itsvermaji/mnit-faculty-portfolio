@@ -6,6 +6,11 @@ import { TabContext, TabList, TabPanel } from "@material-ui/lab";
 import PublicationCard from "../Profile/PublicationCard";
 const FacultyTables = (props) => {
 
+  console.log('meta', props.metaData.articles);
+
+  // console.log(props.metaData)
+  // const {articles} = this.props.metaData.articles;
+  // console.log(articles);
   const [value, setValue] = React.useState('1');
 
   const handleChange = (event, newValue) => {
@@ -24,11 +29,9 @@ const FacultyTables = (props) => {
           </TabList>
         </Box>
         <TabPanel value="1">
-          <PublicationCard></PublicationCard>
-          <PublicationCard></PublicationCard>
-          <PublicationCard></PublicationCard>
-          <PublicationCard></PublicationCard>
-          <PublicationCard></PublicationCard>
+          {props.metaData.articles.map((article) => {
+            <PublicationCard article={article}/>
+          })}
         </TabPanel>
         <TabPanel value="2">Item Two</TabPanel>
         <TabPanel value="3">Item Three</TabPanel>
