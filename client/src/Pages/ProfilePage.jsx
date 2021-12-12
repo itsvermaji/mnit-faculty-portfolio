@@ -78,6 +78,7 @@ const ProfilePage = () => {
 
         <hr />
 
+
         {isLogin ? <FacultyTables metaData={facultyMeta}/> : <LoginDetails isLogin = {setIsLogin} setFaculty = {setFacultyMeta}/>}
         
       </Container>

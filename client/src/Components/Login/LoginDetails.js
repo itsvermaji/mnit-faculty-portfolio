@@ -24,10 +24,9 @@ const LoginDetails = (props) => {
     })
       .then((response) => response.json())
       .then((resData) => {
-        console.log(resData);
-        console.log(resData.data);
-        console.log("Here we set the state");
-        props.isLogin(true);
+        // console.log(resData);
+        // console.log(resData.data);
+        console.log("Logged In here!");
 
         // save it into react store
         var token = resData.token;
@@ -46,10 +45,9 @@ const LoginDetails = (props) => {
           .then((resData) => {
             console.log("full Data", resData);
 
-            
             // console.log('meta', resData.data);
             props.setFaculty(resData.data[1]);
-            
+            props.isLogin(true);
           });
 
         // props.setFaculty({ a: 1, b: 2 });
@@ -57,9 +55,7 @@ const LoginDetails = (props) => {
       .catch((error) => {
         console.error("an error occured while registration:", error);
       })
-      .finally(() => {
-        console.log("Logged In!");
-      });
+
   }
 
   return (
