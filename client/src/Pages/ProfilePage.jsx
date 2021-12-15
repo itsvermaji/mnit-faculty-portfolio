@@ -4,11 +4,9 @@ import "../Components/Profile/profile.css";
 
 import { Container } from "react-bootstrap";
 import Grid from "@mui/material/Grid";
-
 import Item from "@mui/material/ListItem";
 import FacultyTables from "../Components/ui/FacultyTables";
 import Loading from "../Components/ui/Loading";
-import LoginForm from "../Components/ui/LoginForm";
 import LoginDetails from "../Components/Login/LoginDetails";
 
 const ProfilePage = () => {

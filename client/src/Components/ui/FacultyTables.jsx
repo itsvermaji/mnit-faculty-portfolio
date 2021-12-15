@@ -4,6 +4,7 @@ import { Box, Tab } from "@mui/material";
 
 import { TabContext, TabList, TabPanel } from "@material-ui/lab";
 import PublicationCard from "../Profile/PublicationCard";
+import TabCard from "./TabCard";
 const FacultyTables = (props) => {
 
   const { articles } = props.metaData;
@@ -14,7 +15,6 @@ const FacultyTables = (props) => {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
 
   return (
     <Box sx={{ width: "100%", typography: "body1" }}>
@@ -30,13 +30,25 @@ const FacultyTables = (props) => {
         </Box>
         <TabPanel value="1">
           {props.metaData.articles.map((article, index) => {
-            return <PublicationCard key = {index} article={article}/>
+            return (<div style={{margin:"10px"}}>
+              <PublicationCard key = {index} article={article}/>
+              </div>
+            )
           })}
         </TabPanel>
-        <TabPanel value="2">Item Two</TabPanel>
-        <TabPanel value="3">Item Three</TabPanel>
-        <TabPanel value="4">Item Three</TabPanel>
-        <TabPanel value="5">Item Three</TabPanel>
+        <TabPanel value="2">
+            <TabCard/><TabCard/><TabCard/><TabCard/><TabCard/>
+        </TabPanel>
+
+        <TabPanel value="3">
+        <TabCard/><TabCard/><TabCard/><TabCard/><TabCard/>
+        </TabPanel>
+        <TabPanel value="4">
+        <TabCard/><TabCard/><TabCard/><TabCard/><TabCard/>
+        </TabPanel>
+        <TabPanel value="5">
+        <TabCard/><TabCard/><TabCard/><TabCard/><TabCard/>
+        </TabPanel>
       </TabContext>
     </Box>
   );

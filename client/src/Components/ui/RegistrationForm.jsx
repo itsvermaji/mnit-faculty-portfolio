@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row } from "react-bootstrap";
-import { TextField, Button } from "@mui/material";
+import { TextField, Button, Box } from "@mui/material";
 
 const RegistrationForm = (props) => {
   function submitHandler(event) {
@@ -39,7 +39,14 @@ const RegistrationForm = (props) => {
 
   return (
     <Container className="container" style={{ height: "1000px" }}>
-      <Row className="justify-content-md-center">
+      {/* <Row className="justify-content-md-center"> */}
+      <Box
+      mx={{
+        display: 'flex',
+        alignItems: 'center',
+        '& > :not(style)': { m: 1 },
+      }}
+    >
         <form onSubmit={submitHandler}>
           <div>
             <TextField
@@ -124,7 +131,8 @@ const RegistrationForm = (props) => {
             </Button>
           </div>
         </form>
-      </Row>
+      {/* </Row> */}
+      </Box>
     </Container>
   );
 };

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Loading from "../Components/ui/Loading";
 import FacultyList from "../Components/ui/FacultyList";
+import { Container } from "@mui/material";
 
 const HomePage = () => {
   const [facultyData, setFacultyData] = useState([]);
@@ -31,13 +32,13 @@ const HomePage = () => {
     return <Loading />;
   } else {
     return (
-      <div>
-        <h1>Faculties</h1>
-        Faculties Cards will be displayed
+      <Container>
+        {/* <h1>Faculties</h1>
+        Faculties Cards will be displayed */}
 
         <FacultyList faculties = {facultyData} />
 
-      </div>
+      </Container>
     );
   }
 };
