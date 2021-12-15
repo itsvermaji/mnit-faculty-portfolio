@@ -5,8 +5,8 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 // import { Link } from "@mui/material";
 
-export default function TabCard(props) {
-//   const { conf } = props;
+export default function ConferenceCard(props) {
+  const { conf } = props;
 
   return (
     <Box sx={{ width: "100%" }}>
@@ -14,17 +14,17 @@ export default function TabCard(props) {
         <React.Fragment>
           <CardContent>
             <Typography variant="h6" color="text.primary">
-              {/* {conf.name} */}
+              {conf.name}
             </Typography>
             <Typography color="text.secondary" gutterBottom>
-              {/* {conf.year} */}
+              {conf.year}
             </Typography>
-            <Typography color="text.secondary" gutterBottom>
+            {/* <Typography color="text.secondary" gutterBottom>
               Author/Co-authors
             </Typography>
             <Typography color="text.secondary">
               Unknown Attribute
-            </Typography>
+            </Typography> */}
           </CardContent>
         </React.Fragment>
       </Card>
