@@ -24,11 +24,7 @@ const RegistrationPage = () => {
   }
 
   return (
-    <Container maxWidth="xl">
-      <Typography variant="h1" gutterBottom>
-        Registration
-      </Typography>
-
+    <Container>
       <RegistrationForm onRegistration={registrationHandler} />
     </Container>
   );

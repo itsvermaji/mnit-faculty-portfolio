@@ -4,16 +4,22 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const Navigation = () => {
+  const imgSrc = "http://www.mnit.ac.in/sw/uba/photo/mnitlogo.png";
+  // const imgSrc = "https://logos-world.net/wp-content/uploads/2020/12/Lays-Logo-700x394.png";
   return (
-    <Navbar bg="primary" variant="dark">
-      <Container>
-        {/* <Link></Link> */}
-        <Navbar.Brand href="/"><Typography variant="button" fontSize={14}>Faculty Portal</Typography></Navbar.Brand>
+    <Navbar bg="primary" variant="dark" height="8px">
+      <Container style={{ height: "0px" }}>
+        <Navbar.Brand href="/">
+          <Typography variant="button" fontSize={14}>
+            Faculty Portal
+          </Typography>
+        </Navbar.Brand>
         <Nav className="me-auto">
           <Nav.Link href="/register">Registration</Nav.Link>
           {/* <Nav.Link href="#features">Features</Nav.Link>
           <Nav.Link href="#pricing">Pricing</Nav.Link> */}
         </Nav>
+        <img src={imgSrc} style={{width:"100px", height:"80px", marginRight:"8px"}}/>
       </Container>
     </Navbar>
 
